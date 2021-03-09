@@ -1,5 +1,5 @@
 """
-Name: Pavishanan Surenthiran
+Name: Hyprr
 Date: 2021-02-14
 Description: Attempting to build my personal assistant bot
 """
@@ -32,8 +32,8 @@ class AssistantClass():
         self.bot_client = discord.Client()
         self.bot_client = commands.Bot(command_prefix="!a ")
         self.bot_client.remove_command('help')
-        self.token_code = "ODEwNTg0MzU2OTYyODI4MzE4.YClxgg.Qx-UflsNWG86H3i_IqfGXrEQmFg"
-        self.weather_api = "http://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&appid=f39749e137dc29218586e71c53ddbff5"
+        self.token_code = "YOUR_BOT_TOKEN"
+        self.weather_api = "YOUR_API_KEY"
 
         # Help embed
         self.HelpEmbed()
@@ -217,7 +217,7 @@ class AssistantClass():
             await ctx.trigger_typing()
             # Search for
             search_for = " ".join(title)
-            empty_char = "‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎"
+            empty_char = "‎"
 
             # Searching the top three videos
             vs = VideosSearch(str(search_for), limit=3)
@@ -376,8 +376,6 @@ class AssistantClass():
 
         @self.bot_client.command()
         async def passgen(ctx):
-            # PIP DOWNLOAD THE PASSWORDGENERATOR PWGENERATOR
-            # MODULE AND INLCUDE IT INTO THE REQUIREMENTS FILE
             await ctx.trigger_typing()
             password_gen = pwgenerator.generate()
 
@@ -422,7 +420,7 @@ class AssistantClass():
         @self.bot_client.command()
         async def sauce(ctx, *userlink):
             await ctx.trigger_typing()
-            snao_api = "646e73b5ea13820410201c76dbda0cb8b50e70d8"
+            snao_api = "YOUR_SAUCE_NAO_API_KEY"
             return_sauce = SauceNao(api_key=snao_api)
 
             if userlink:
@@ -528,7 +526,7 @@ class AssistantClass():
             await ctx.trigger_typing()
             try: 
                 # Setting up client object 
-                api_key = "U2EKHK-PKXEVGK5TU"
+                api_key = "YOUR_WOLFRAMALPHA_API_KEY"
                 wolf_client = wolframalpha.Client(api_key)
 
                 # Getting results 
