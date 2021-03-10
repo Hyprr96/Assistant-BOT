@@ -75,7 +75,6 @@ class AssistantClass():
             help_embed.add_field(name = "avatar", value = "Shows your avatar or whoever you mention", inline=True)
             help_embed.add_field(name = "stats", value = "Shows your 'stats' in the server", inline=True)
             help_embed.add_field(name = "hello", value = "Hello"+"\n‎", inline=True)
-            help_embed.add_field(name = "timetable", value = "Shows the current Cedarbrae timetable for this week", inline=True)
             # Seperator
             help_embed.add_field(name = "‎", value = "‎", inline=False)
             help_embed.add_field(name = "INTERMEDIATE COMMANDS", value = "-----", inline=False)
@@ -187,26 +186,6 @@ class AssistantClass():
                                 "Status: ****"+status.upper()+"****\n"
                                 "Is On Mobile?: ****"+is_mobile+"****\n"
                                 "Roles: " + ", ".join(s[1:]))
-
-        @self.bot_client.command()
-        async def timetable(ctx):
-            cedarweek = "http://www.cedarbraeci.com/cedarweek.html"
-            timetable_embed=discord.Embed(
-                title="Cedarbrae timetable for this week",
-                colour=0xffffff
-            )
-            school_pg = requests.get(cedarweek).content
-            tree = BeautifulSoup(school_pg, 'html.parser')
-            full_img = "http://www.cedarbraeci.com"
-            imgs = []
-            # Navigating tree
-            for link in tree.find_all('img'):
-                imgs.append(link.get('src'))
-            full_img = full_img+imgs[0]
-
-            # Setting image
-            timetable_embed.set_image(url=full_img)
-            await ctx.send(embed=timetable_embed)
 
     def IntermediateCommands(self):
         """More advanced commands"""
