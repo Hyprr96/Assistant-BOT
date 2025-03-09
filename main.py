@@ -524,13 +524,5 @@ class AssistantClass():
                     )
                 await ctx.send(embed=err_embed)
 
-        @self.bot_client.command()
-        async def isjordangay(ctx):
-            await ctx.trigger_typing()
-            response = ['of course', 'indubitably', 'thats a fact', 'yes', 'are you questioning his gayness?']
-            s = len(response)
-            rand_num = random.randint(0, s)
-            await ctx.send(response[int(rand_num)])
-
 # ------------------------------------------------------------------------------
 startapp_bot = AssistantClass()
